@@ -1,3 +1,4 @@
+@charset "UTF-8";
 * {
   margin: 0;
   padding: 0;
@@ -7,6 +8,7 @@ body {
   background-color: #fdfdfd;
   font-family: montserrat; }
 
+/* Footer */
 footer {
   background-color: #16344d;
   width: 100%;
@@ -15,20 +17,63 @@ footer {
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
-  color: white; }
+  color: white;
+  line-height: 1.5rem;
+  font-size: 0.8rem; }
   footer div {
     display: inline-block; }
-    footer div a {
+  footer .izquierda {
+    display: block;
+    width: 30%;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px; }
+    footer .izquierda a img {
+      width: 80%;
+      border-radius: 10%; }
+  footer .derecha {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px; }
+    footer .derecha .boton {
+      text-decoration: none;
+      width: 69px;
+      align-self: center;
+      margin-top: 0.4rem;
+      color: black;
+      font-size: 15px;
+      background-color: #B4D330;
+      border: solid #689368;
+      box-shadow: 0 1px 3px black;
+      border-radius: 10px;
+      font-size: 12px; }
+      footer .derecha .boton:hover {
+        background-color: #299fc4;
+        color: #fdfdfd;
+        animation-name: shake;
+        animation-duration: 1s;
+        animation-iteration-count: infinite; }
+  footer .centro {
+    width: 30%;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px; }
+    footer .centro a {
       text-decoration: none;
       font-size: 22px;
       color: #B4D330;
-      margin: 2%; }
-      footer div a:hover {
-        color: #1586a8;
+      margin: 2%;
+      font-size: 18px; }
+      footer .centro a:hover {
+        color: #299fc4;
         animation-name: shake;
         animation-duration: 1s;
         animation-iteration-count: infinite; }
 
+/* Barra de Nav */
 nav {
   background-color: #16344d;
   position: fixed;
@@ -58,12 +103,16 @@ nav {
   nav .menu {
     clear: both;
     max-height: 0;
-    transition: max-height .2s ease-out; }
+    transition: max-height .2s ease-out;
+    clear: none;
+    float: right;
+    max-height: none; }
   nav .iconoMenu {
     padding: 28px 20px;
     position: relative;
     float: right;
-    cursor: pointer; }
+    cursor: pointer;
+    display: none; }
     nav .iconoMenu .iconoNav {
       background: white;
       display: block;
@@ -102,10 +151,19 @@ nav {
       nav .botonMenu:checked ~ .iconoMenu .iconoNav:after {
         transform: rotate(45deg);
         top: 0; }
+  nav li a {
+    padding: 20px 30px; }
 
 .activa {
   color: #B4D330; }
 
+/* Main */
+main {
+  min-height: 72vh; }
+  main img {
+    width: 100%; }
+
+/* Titulos */
 h1 {
   border: 6px ridge orange;
   border-radius: 60px;
@@ -123,13 +181,10 @@ h2 {
   margin-top: 100px;
   font-size: 300%;
   font-family: Arial, Helvetica, sans-serif;
-  text-align: center; }
+  text-align: center;
+  font-size: 2.4rem; }
 
-main {
-  min-height: 72vh; }
-  main img {
-    width: 100%; }
-
+/* Bienvenida */
 .recuadro {
   margin-bottom: 4%;
   box-shadow: 0 5px 8px black;
@@ -137,41 +192,15 @@ main {
   height: 100vh;
   display: flex;
   justify-content: center;
-  align-items: center; }
+  align-items: center;
+  background-image: url(/img/imagenPortada1.jpg); }
 
-.izquierda {
-  width: 30%;
-  text-align: center;
-  margin-top: 20px;
-  margin-bottom: 20px; }
-
-.centro {
-  width: 35%;
-  text-align: center;
-  margin-top: 20px;
-  margin-bottom: 20px; }
-
-.derecha {
-  width: 30%;
-  text-align: center;
-  margin-top: 20px;
-  margin-bottom: 20px; }
-
-.boton {
-  margin: 2%;
-  padding: 1%;
-  color: black;
-  font-size: 15px;
-  background-color: #B4D330;
-  border: solid #689368;
-  box-shadow: 0 1px 3px black;
-  border-radius: 10px; }
-  .boton:hover {
-    background-color: #1586a8;
-    color: #fdfdfd;
-    animation-name: shake;
-    animation-duration: 1s;
-    animation-iteration-count: infinite; }
+.intro {
+  font-size: 2rem;
+  padding-bottom: 1rem;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-size: 1.3rem; }
 
 .introFlex, .flexHoja, .idea .ideaFlex {
   display: flex;
@@ -179,17 +208,20 @@ main {
   padding-left: 10%;
   padding-right: 10%; }
 
-.intro {
-  font-size: 2rem;
-  padding-bottom: 1rem; }
-
+/* Secciones de la Web*/
 .secciones {
   margin-top: 1rem;
-  margin-bottom: 2rem; }
+  margin-bottom: 2rem;
+  margin-bottom: 1.4rem; }
 
 .introduccion {
   padding-left: 5%;
-  padding-right: 5%; }
+  padding-right: 5%;
+  margin-right: 0;
+  margin-left: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around; }
   .introduccion .containers {
     text-decoration: none;
     display: block;
@@ -203,7 +235,10 @@ main {
     margin-bottom: 2rem;
     background-color: #7094a8;
     color: black;
-    font-size: 1.3rem; }
+    font-size: 1.3rem;
+    width: 45%;
+    margin-bottom: 1.4rem;
+    font-size: 1rem; }
     .introduccion .containers h3 {
       text-decoration: underline #16344d; }
     .introduccion .containers:hover {
@@ -211,6 +246,7 @@ main {
       text-shadow: 8px 8px 8px black;
       box-shadow: 8px 8px 8px black; }
 
+/* Sección de fotos */
 .grilla {
   margin-top: 3%;
   margin-left: 20px;
@@ -221,9 +257,15 @@ main {
   grid-template-rows: repeat(2, 2fr);
   grid-column-gap: 20px;
   grid-row-gap: 20px;
-  grid-template-areas: " imagen1 imagen2 imagen3" "imagen4 imagen5 imagen6"; }
+  grid-template-areas: " imagen1 imagen2 imagen3" "imagen4 imagen5 imagen6";
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(6, 1fr);
+  grid-column-gap: 0;
+  grid-row-gap: 20px;
+  grid-template-areas: "imagen1"  "imagen2" "imagen3" "imagen4" "imagen5" "imagen6"; }
   .grilla .imagenes {
-    height: 100%; }
+    height: 100%;
+    transition: all .2s ease-in-out; }
 
 #imagen1 {
   grid-area: imagen1; }
@@ -246,13 +288,12 @@ main {
 .imagenes:hover {
   transform: scale(1.05); }
 
-.nombre {
-  font-family: 'Brush Script MT', cursive;
-  font-size: 3rem; }
-
+/* Sección de contacto */
 .flexHoja {
   margin-top: 4%;
-  margin-bottom: 4%; }
+  margin-bottom: 4%;
+  padding-left: 5%;
+  padding-right: 5%; }
   .flexHoja .hojaForm {
     width: 35rem;
     padding: 3%;
@@ -261,7 +302,12 @@ main {
     border: 8px outset #04566E;
     border-radius: 2rem;
     box-shadow: 0 0 10px black;
-    font-size: 1.25rem; }
+    font-size: 1.25rem;
+    font-size: 1rem;
+    font-size: 0.9rem; }
+    .flexHoja .hojaForm .padreBotones {
+      display: flex;
+      justify-content: space-around; }
     .flexHoja .hojaForm .ancho {
       width: 100%;
       padding: 5px; }
@@ -276,10 +322,31 @@ main {
         .flexHoja .hojaForm .ancho textarea:focus {
           color: white;
           background-color: #3b3737; }
+    .flexHoja .hojaForm .boton {
+      text-decoration: none;
+      width: auto;
+      display: block;
+      margin: 2%;
+      padding: 1%;
+      color: black;
+      font-size: 15px;
+      background-color: #B4D330;
+      border: solid #689368;
+      box-shadow: 0 1px 3px black;
+      border-radius: 10px;
+      font-size: 0.8rem; }
+      .flexHoja .hojaForm .boton:hover {
+        background-color: #299fc4;
+        color: #fdfdfd;
+        animation-name: shake;
+        animation-duration: 1s;
+        animation-iteration-count: infinite; }
 
+/* Sección Sobre Nosotros */
 .padreTarjetas {
   display: flex;
-  justify-content: space-around; }
+  justify-content: space-around;
+  flex-direction: column; }
   .padreTarjetas .tarjeta {
     margin-top: 2%;
     width: 40%;
@@ -290,16 +357,33 @@ main {
     border-radius: 40px;
     color: white;
     font-size: 18px;
-    padding: 2%; }
+    padding: 2%;
+    align-self: center;
+    width: 80%;
+    width: 90%;
+    margin-bottom: 1.4rem; }
+    .padreTarjetas .tarjeta .nombre {
+      font-family: 'Brush Script MT', cursive;
+      font-size: 3rem;
+      font-family: 'Brush Script MT', cursive;
+      font-size: 2rem;
+      font-size: 1.6rem; }
     .padreTarjetas .tarjeta p {
       padding: 1%;
       font-family: Arial, Helvetica, sans-serif;
-      line-height: 1.8rem; }
+      line-height: 1.8rem;
+      padding: 1%;
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.6rem;
+      font-size: 1rem; }
     .padreTarjetas .tarjeta .gifs {
       height: 15vw;
       width: 15rem;
-      margin-top: 2%; }
+      margin-top: 2%;
+      height: 50%;
+      width: 70%; }
 
+/* Sección Idea */
 .idea {
   margin-top: 3rem; }
   .idea h2 {
@@ -308,8 +392,17 @@ main {
   .idea .ideaFlex .parrafo {
     font-size: 1.5rem;
     line-height: 2rem;
-    font-family: Arial, Helvetica, sans-serif; }
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.4rem;
+    line-height: 2rem;
+    font-size: 1.2rem;
+    line-height: 2rem;
+    font-size: 1.1rem;
+    line-height: 2rem;
+    font-size: 1rem;
+    line-height: 1.7rem; }
 
+/* Grilla de distribución de página paises */
 .gridPaises {
   display: grid;
   grid-template-areas: "opciones contenido";
@@ -317,7 +410,11 @@ main {
   grid-template-rows: 100vh;
   margin-top: 62px; }
 
+/* Navegación de Países */
 .opciones {
+  grid-area: opciones;
+  background-color: #7094a8;
+  color: white;
   grid-area: opciones;
   background-color: #7094a8;
   color: white; }
@@ -326,36 +423,62 @@ main {
     line-height: 4rem;
     list-style: none;
     font-size: 1.5rem;
-    text-align: center; }
+    text-align: center;
+    line-height: 4rem;
+    font-size: 1.2rem;
+    text-align: center;
+    line-height: 4rem;
+    font-size: 1.1rem;
+    text-align: center;
+    line-height: 4rem;
+    font-size: 1rem; }
     .opciones .navPaises li a {
       display: block;
       width: 100%;
       text-decoration: none;
-      color: #000; }
+      color: #000;
+      display: block;
+      text-decoration: none; }
       .opciones .navPaises li a:hover {
         font-size: 1.8rem;
-        background-color: #4772c2; }
+        background-color: #4772c2;
+        font-size: 1.2rem;
+        font-size: 1.2rem;
+        font-size: 1.1rem; }
   .opciones .tituloPaises {
     margin-top: 30px;
-    margin-bottom: 10px; }
+    margin-bottom: 10px;
+    font-size: 1.4rem;
+    font-size: 1.3rem;
+    font-size: 1.2rem; }
 
+/* Información de Países */
 .contenido {
   grid-area: contenido;
   line-height: 2rem;
   overflow: auto; }
   .contenido h3 {
     font-size: 2rem;
-    margin-bottom: 10px; }
+    margin-bottom: 10px;
+    font-size: 1.4rem; }
   .contenido h5 {
     font-size: 1.5rem;
     margin-top: 10px;
-    margin-bottom: 10px; }
+    margin-bottom: 10px;
+    font-size: 1.3rem;
+    font-size: 1.1rem; }
   .contenido ul {
     list-style-position: inside;
-    font-size: 1.2rem; }
+    font-size: 1.2rem;
+    font-size: 1.2rem;
+    font-size: 1.1rem;
+    font-size: 0.9rem; }
   .contenido p {
     font-size: 1.2rem;
-    max-width: 60ch; }
+    max-width: 60ch;
+    font-size: 1.2rem;
+    font-size: 1.1rem;
+    font-size: 0.9rem; }
   .contenido .pais1 {
     background-color: white;
     padding: 5%; }
@@ -363,10 +486,7 @@ main {
     background-color: #b4b4b4;
     padding: 5%; }
 
-.tituloPaises {
-  grid-area: titulo;
-  margin: 0; }
-
+/* Sección historias/experiencias */
 .experiencias {
   margin-top: 30px;
   margin-left: 5%;
@@ -382,11 +502,13 @@ main {
       color: black;
       margin-bottom: 3%;
       line-height: 1.8rem;
-      font-size: 1.2rem; }
+      font-size: 1.2rem;
+      font-size: 1rem; }
       .experiencias ul .historias h3 {
         font-family: Arial, Helvetica, sans-serif;
         text-decoration: underline #3a4f77; }
 
+/* Animaciones */
 @keyframes shake {
   0% {
     transform: rotate(0deg); }
@@ -399,11 +521,12 @@ main {
   100% {
     transform: rotate(0deg); } }
 
+/* Media Queries */
 @media (min-width: 1065px) {
   nav li {
     float: left; }
-    nav li a {
-      padding: 20px 30px; }
+  nav li a {
+    padding: 20px 30px; }
   nav .menu {
     clear: none;
     float: right;
@@ -418,8 +541,8 @@ main {
     display: flex;
     flex-direction: row;
     justify-content: space-around; }
-    .introduccion .containers {
-      width: 20%; } }
+  .introduccion .containers {
+    width: 45%; } }
 
 @media (max-width: 1065px) {
   h1 {
@@ -428,7 +551,7 @@ main {
     border-style: none;
     text-shadow: cyan 3px 3px 30px; }
   h2 {
-    font-size: 2rem; }
+    font-size: 2.4rem; }
   .intro {
     font-size: 1.5rem;
     line-height: 2rem; }
@@ -436,17 +559,17 @@ main {
     grid-area: opciones;
     background-color: #7094a8;
     color: white; }
-    .opciones .navPaises {
-      line-height: 4rem;
-      font-size: 1.2rem;
-      text-align: center; }
-      .opciones .navPaises li a {
-        display: block;
-        text-decoration: none; }
-        .opciones .navPaises li a:hover {
-          font-size: 1.2rem; }
-    .opciones .tituloPaises {
-      font-size: 1.4rem; }
+  .opciones .navPaises {
+    line-height: 4rem;
+    font-size: 1.2rem;
+    text-align: center; }
+  .opciones .navPaises li a {
+    display: block;
+    text-decoration: none; }
+  .opciones .navPaises li a:hover {
+    font-size: 1.2rem; }
+  .opciones .tituloPaises {
+    font-size: 1.4rem; }
   .contenido p {
     font-size: 1.2rem; }
   .contenido ul {
@@ -457,15 +580,103 @@ main {
     grid-column-gap: 0;
     grid-row-gap: 20px;
     grid-template-areas: "imagen1"  "imagen2" "imagen3" "imagen4" "imagen5" "imagen6"; }
+  .idea .ideaFlex .parrafo {
+    font-size: 1.4rem;
+    line-height: 2rem; }
+  .padreTarjetas .tarjeta .nombre {
+    font-family: 'Brush Script MT', cursive;
+    font-size: 2rem; }
+  .padreTarjetas .tarjeta p {
+    padding: 1%;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6rem; } }
+
+@media (max-width: 740px) {
+  h2 {
+    margin-top: 90px;
+    font-size: 1.8rem; }
+  .opciones .navPaises {
+    line-height: 4rem;
+    font-size: 1.1rem;
+    text-align: center; }
+  .opciones .navPaises li a:hover {
+    font-size: 1.2rem; }
+  .opciones .tituloPaises {
+    font-size: 1.3rem; }
+  .contenido p {
+    font-size: 1.1rem; }
+  .contenido h5 {
+    font-size: 1.3rem; }
+  .contenido ul {
+    font-size: 1.1rem; }
   .padreTarjetas {
     flex-direction: column; }
-    .padreTarjetas .tarjeta {
-      width: 90%;
-      margin-left: 5%;
-      margin-right: 5%; }
-      .padreTarjetas .tarjeta .gifs {
-        height: 50%;
-        width: 70%; }
-  .idea .parrafo {
-    font-size: 1.4rem;
-    line-height: 2rem; } }
+  .padreTarjetas .tarjeta {
+    align-self: center;
+    width: 80%; }
+  .padreTarjetas .tarjeta .gifs {
+    height: 50%;
+    width: 70%; }
+  .idea .ideaFlex .parrafo {
+    font-size: 1.2rem;
+    line-height: 2rem; }
+  .flexHoja .hojaForm {
+    font-size: 1rem; }
+  .flexHoja .hojaForm .boton {
+    font-size: 0.8rem; } }
+
+@media (max-width: 500px) {
+  h2 {
+    font-size: 1.6rem; }
+  .opciones .navPaises {
+    line-height: 4rem;
+    font-size: 1rem; }
+  .opciones .navPaises li a:hover {
+    font-size: 1.1rem; }
+  .opciones .tituloPaises {
+    font-size: 1.2rem; }
+  .contenido p {
+    font-size: 0.9rem; }
+  .contenido h5 {
+    font-size: 1.1rem; }
+  .contenido h3 {
+    font-size: 1.4rem; }
+  .contenido ul {
+    font-size: 0.9rem; }
+  .idea .ideaFlex .parrafo {
+    font-size: 1.1rem;
+    line-height: 2rem; }
+  .flexHoja {
+    padding-left: 5%;
+    padding-right: 5%; }
+  .flexHoja .hojaForm {
+    font-size: 0.9rem; }
+  footer {
+    font-size: 0.8rem; }
+  footer .derecha .boton {
+    font-size: 12px; }
+  footer .centro a {
+    font-size: 18px; } }
+
+@media (max-width: 400px) {
+  h1 {
+    font-size: 3.3rem; }
+  .intro {
+    font-size: 1.3rem; }
+  .secciones {
+    margin-bottom: 1.4rem; }
+  .experiencias ul .historias {
+    font-size: 1rem; }
+  .introduccion .containers {
+    margin-bottom: 1.4rem;
+    font-size: 1rem; }
+  .idea .ideaFlex .parrafo {
+    font-size: 1rem;
+    line-height: 1.7rem; }
+  .padreTarjetas .tarjeta {
+    width: 90%;
+    margin-bottom: 1.4rem; }
+  .padreTarjetas .tarjeta .nombre {
+    font-size: 1.6rem; }
+  .padreTarjetas .tarjeta p {
+    font-size: 1rem; } }
